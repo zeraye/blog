@@ -1,0 +1,44 @@
+.blog-posts-title {
+  color: #2a7ae2;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.blog-posts-create {
+  color: #2a7ae2;
+  text-decoration: none;
+}
+
+.blog-posts-create:hover {
+  text-decoration: underline;
+}
+
+.blog-posts {
+  list-style: none;
+  margin-left: 0;
+}
+
+.blog-posts-header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.blog-posts-header-date {
+  color: #828282;
+  font-size: 0.9rem;
+}
+
+.blog-posts-header-title {
+  color: #2a7ae2;
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.blog-posts-header-title:hover {
+  text-decoration: underline;
+}
+
+.blog-posts-header-title:visited {
+  color: #1756a9;
+}

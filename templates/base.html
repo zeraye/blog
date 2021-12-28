@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/static/css/base.css"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+  {% block css %}{% endblock %}
+  {% block title %}{% endblock %}
+</head>
+<body>
+  <nav class="blog-nav">
+    <a class="blog-nav-text" href="/">zeraye_blog</a>
+  </nav>
+
+  <div class="blog-content">
+    <div class="blog-content-wrapper">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+  
+
+  <footer class="blog-footer">
+    <a class="blog-footer-link" href="https://github.com/Zeraye" target="_blank">
+      <img class="blog-footer-img" src="{{ url_for('static', filename='img/octocat.svg') }}" width="16" height="16"/>
+      <span class="blog-footer-username">Zeraye</span>
+    </a>
+  </footer>
+</body>
+</html>
+
+<!-- Created by zeraye@duck.com -->

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block css %}<link rel="stylesheet" href="/static/css/post.css"/>{% endblock %}
+
+{% block title %}<title>{{ post.title }}</title>{% endblock %}
+
+{% block content %}
+<h1 class="post-title">{{ post.title }}</h1>
+<p class="post-date">{{ time.strftime("%b %d, %Y", time.gmtime(post.date)) }}</p>
+
+<div class="post-content">
+{{ post.content|safe }}
+</div>
+{% endblock %}

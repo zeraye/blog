@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block css %}<link rel="stylesheet" href="/static/css/blog.css"/>{% endblock %}
+
+{% block title %}<title>zeraye_blog</title>{% endblock %}
+
+{% block content %}
+<h2 class="blog-posts-title">Posts
+</h2>
+<ul class="blog-posts">
+  {% for post in posts %}
+  <li class="blog-posts-header">
+    <span class="blog-posts-header-date">{{ time.strftime("%b %d, %Y", time.gmtime(post.date)) }}</span>
+    <h3><a class="blog-posts-header-title" href="/post/{{ post.title }}">{{ post.title }}</a></h3>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
