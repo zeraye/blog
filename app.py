@@ -21,13 +21,13 @@ for filename in os.listdir("posts"):
 def post(title):
   for post in posts:
     if post["title"] == title:
-      return render_template("post.html", time=time, post=post)
+      return render_template("post.html", post=post)
 
   return redirect(url_for("blog"))
 
 @app.route("/")
 def blog():
-  return render_template("blog.html", time=time, posts=posts)
+  return render_template("blog.html", posts=posts)
 
 if __name__ == "__main__":
   app.run()
