@@ -6,7 +6,7 @@
 
 {% block content %}
 <h1 class="post-title">{{ post.title }}</h1>
-<p class="post-date">{{ time.strftime("%b %d, %Y", time.gmtime(post.date)) }}</p>
+<p class="post-date">{{ post.date.strftime("%b %d, %Y") }}</p>
 
 <div class="post-content">
 {{ post.content|safe }}

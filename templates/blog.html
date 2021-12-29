@@ -10,7 +10,7 @@
 <ul class="blog-posts">
   {% for post in posts %}
   <li class="blog-posts-header">
-    <span class="blog-posts-header-date">{{ time.strftime("%b %d, %Y", time.gmtime(post.date)) }}</span>
+    <span class="blog-posts-header-date">{{ post.date.strftime("%b %d, %Y") }}</span>
     <h3><a class="blog-posts-header-title" href="/post/{{ post.title }}">{{ post.title }}</a></h3>
   </li>
   {% endfor %}

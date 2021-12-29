@@ -8,11 +8,10 @@ posts = []
 
 for filename in os.listdir("posts"):
   filedata = frontmatter.load(f"posts/{filename}")
-  date = filedata["date"].split("-")
 
   post = {
     "title": filedata["title"],
-    "date": time.mktime((int(date[0]), int(date[1]), int(date[2]), 0, 0, 0, 0, 0, 0)),
+    "date": filedata["date"],
     "content": markdown.markdown(text=filedata.content, output_format="html5", tab_length=2, extensions=["markdown.extensions.extra"])
   }
 
