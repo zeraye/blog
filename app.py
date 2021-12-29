@@ -12,7 +12,7 @@ for filename in os.listdir("posts"):
 
   post = {
     "title": filedata["title"],
-    "date": time.mktime((int(date[2]), int(date[0]), int(date[1]), 0, 0, 0, 0, 0, 0)),
+    "date": time.mktime((int(date[0]), int(date[1]), int(date[2]), 0, 0, 0, 0, 0, 0)),
     "content": markdown.markdown(text=filedata.content, output_format="html5", tab_length=2, extensions=["markdown.extensions.extra"])
   }
 

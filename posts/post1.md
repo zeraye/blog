@@ -1,6 +1,6 @@
 ---
 title: Lorem impsum something youa
-date: 12-28-2021
+date: 2021-12-29
 ---
 
 How [links](https://www.google.com) work.
