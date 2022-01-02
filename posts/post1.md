@@ -1,24 +1,24 @@
 ---
-title: Something will there in the future
-date: 2021-12-29
+title: Test
+date: 2022-01-02
 ---
 
-### Just to test things, article will be in the future
+### Test
 
-How [links](https://www.google.com) work.
+some [link](https://www.google.com).
 
 Example of ```inine code```.
 
-> “That's example of quote.”
+> “Quote.”
 
-Here is gist.
+Gist
 
 <script src="https://gist.github.com/Zeraye/f342157ed413365086eceb3c135a059e.js"></script>
 
-Image!
+Img
 
 <img src="https://searchengineland.com/figz/wp-content/seloads/2018/01/google-dog-puppy-eyes-1515500243.jpg" width="640" height="558" />
 
-And gif (or gif, if you pronounce in that way).
+Gif
 
 <img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="400" height="300" />
