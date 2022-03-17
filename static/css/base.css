@@ -37,7 +37,7 @@ body {
   margin-right: auto;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  width: max(40%, 400px);
+  width: max(50%, 700px);
 }
 
 .blog-content-wrapper {
