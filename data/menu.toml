@@ -1,0 +1,23 @@
+[[entries]]
+title = "links"
+
+  [[entries.entries]]
+  title = "GitHub"
+  url = "https://github.com/zeraye/"
+
+  [[entries.entries]]
+  title = "LinkedIn"
+  url = "https://www.linkedin.com/in/jakubrudnik0/"
+
+[[entries]]
+title = "all posts"
+
+  [entries.post_list]
+  limit = 10
+  show_more = true
+  show_more_text = "See archive..."
+  show_more_url = "posts"
+
+[[entries]]
+title = "rss"
+url = "index.xml"
