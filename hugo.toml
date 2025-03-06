@@ -30,6 +30,8 @@ title = "Jakub Rudnik"
     ordered    = false
 
 [params]
+  favicon = "favicon.svg"
+
   [params.theme_config]
     appearance        = "auto"
     back_home_text    = ".."
