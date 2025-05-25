@@ -2,6 +2,10 @@
 title = "links"
 
   [[entries.entries]]
+  title = "sourcehut"
+  url = "https://git.sr.ht/~jakub/"
+
+  [[entries.entries]]
   title = "GitHub"
   url = "https://github.com/zeraye/"
 
