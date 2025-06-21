@@ -48,7 +48,7 @@ github.com/google/uuid v1.6.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+
 
 When you build your first Golang image, you will end up with something like this:
 
-```docker
+```Dockerfilefile
 FROM golang:1.24.3-alpine3.21
 
 WORKDIR /app
@@ -68,7 +68,7 @@ It weighs 316MB, that's a lot. There are also a lot of things we can improve in 
 
 You can verify that the dependencies of the current module, which are stored in a local downloaded source cache, have not been modified since being downloaded:
 
-```docker
+```Dockerfile
 RUN go mod download && go mod verify
 ```
 
@@ -82,7 +82,7 @@ github.com/google/uuid v1.6.0: dir has been modified
 
 You don't want to download dependencies every time you change something in the source code. Let's download dependencies and then build project. Now after you change some code, the layer that downloads dependencies would be cached:
 
-```docker
+```Dockerfile
 COPY go.mod go.sum ./
 
 RUN go mod download
@@ -98,7 +98,7 @@ _Note: `go build` will download dependecies by itself, so the example from the b
 
 This is well known security practice. I don't have anything more to add here. See [Docker best practices about USER](https://docs.docker.com/build/building/best-practices/#user) or search it.
 
-```docker
+```Dockerfile
 FROM golang:1.24.3-alpine3.21
 
 # rest of the Dockerfile...
@@ -114,7 +114,7 @@ _Note: User and group `nobody` are built into the Alpine image._
 
 Let's apply all suggestions from step 1 and see what we get:
 
-```docker
+```Dockerfile
 FROM golang:1.24.3-alpine3.21
 
 WORKDIR /app
@@ -138,7 +138,7 @@ It still weighs 316MB, but it's much more secure and bulding is faster, because 
 
 We can utilize [Docker `scratch` image](https://docs.docker.com/build/building/base-images/#create-a-minimal-base-image-using-scratch). It's quite light because it weighs 0 bytes. Let's build our binary using `golang:1.24.3-alpine3.21`, and then run binary in the `scratch` image:
 
-```docker
+```Dockerfile
 FROM golang:1.24.3-alpine3.21 AS build
 
 WORKDIR /app
@@ -168,7 +168,7 @@ docker: Error response from daemon: unable to find user nobody: no matching entr
 
 Oh, `scratch` doesn't have `nobody` user built-in (or any user). We need to copy `/etc/passwd` and `/etc/group` from our `build` image:
 
-```docker
+```Dockerfile
 FROM golang:1.24.3-alpine3.21 AS build
 
 # same as above...
@@ -214,7 +214,7 @@ After we build and run we get:
 
 We need CA certificates to make HTTPS requests. We can easily add them, by just adding one line:
 
-```docker
+```Dockerfile
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 ```
 
@@ -248,7 +248,7 @@ After we run it, we get:
 
 We are missing timezones! Let's add them to our `build` image and then copy to `scratch` image:
 
-```docker
+```Dockerfile
 FROM golang:1.24.3-alpine3.21 AS build
 
 RUN apk add --no-cache tzdata
@@ -264,7 +264,7 @@ COPY --from=build /usr/share/zoneinfo /usr/share/zoneinfo
 
 The last thing is static binary. Golang programs are statically linked by default, but there is exception. When we use `cgo` (C bindings), the binary becomes dynamically linked. We can disable it by setting environmental variable `CGO_ENABLED` to 0:
 
-```docker
+```Dockerfile
 RUN CGO_ENABLED=0 go build -o /main .
 ```
 
@@ -272,7 +272,7 @@ RUN CGO_ENABLED=0 go build -o /main .
 
 We can reduce binary size by stripping debug information `-ldflags="-s -w"` and removing local file system paths from the compiled binary `-trimpath`, so we end up with:
 
-```docker
+```Dockerfile
 RUN go build ldflags="-s -w" -trimpath -o /main .
 ```
 
@@ -280,7 +280,7 @@ RUN go build ldflags="-s -w" -trimpath -o /main .
 
 After we update our Dockerfile from step 2 with suggestions we get:
 
-```docker
+```Dockerfile
 FROM golang:1.24.3-alpine3.21 AS build
 
 RUN apk add --no-cache tzdata

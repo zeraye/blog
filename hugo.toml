@@ -21,8 +21,8 @@ title = "Jakub Rudnik"
     lineNumbersInTable = true
     noClasses          = true
     noHl               = false
-    style              = 'rrt'
-    tabWidth           = 4
+    style              = 'catppuccin-frappe'
+    tabWidth           = 2
 
   [markup.tableOfContents]
     startLevel = 2
