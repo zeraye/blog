@@ -118,15 +118,8 @@ html {
   height: 100%;
 }
 
-@font-face {
-  font-family: "MesloLGS NF";
-  src: url("/MesloLGSNerdFontMono-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
-  font-family: "MesloLGS NF", monospace;
+  font-family: monospace;
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
