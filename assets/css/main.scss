@@ -189,7 +189,7 @@ code {
 code:not(pre > code) {
   padding: 0.2em 0.4em;
   font-size: 85%;
-  border-radius: 6px;
+  white-space: nowrap;
 }
 
 code.has-jax {
