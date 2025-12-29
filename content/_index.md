@@ -1,1 +1,1 @@
-Graduate of computer science studies at the [WUT](https://ww4.mini.pw.edu.pl/). Full-Stack DevOps Engineer working at the [Progress](https://progress.com/). Golang enthusiast and advocate for online privacy.
+Graduate of Computer Science at [WUT](https://ww4.mini.pw.edu.pl/). DevOps Engineer working at [Progress](https://progress.com/). Gopher and online privacy advocate, occasionally spending too much times on HN. Keen on classic literature and nature in my free time.
