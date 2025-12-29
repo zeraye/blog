@@ -1,1 +1,1 @@
-Graduate of Computer Science at [WUT](https://ww4.mini.pw.edu.pl/). DevOps Engineer working at [Progress](https://progress.com/). Gopher and online privacy advocate, occasionally spending too much times on HN. Keen on classic literature and nature in my free time.
+Graduate of Computer Science at [WUT](https://ww4.mini.pw.edu.pl/). DevOps Engineer working at [Progress](https://progress.com/). Gopher and online privacy advocate, occasionally spending too much time on HN. Keen on classic literature and nature in my free time.
