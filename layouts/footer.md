@@ -1,1 +1,3 @@
 Contact me at jakub@rudnik.io.
+
+~ Praise the brave new world, you have to...
